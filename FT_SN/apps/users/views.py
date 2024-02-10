@@ -2,13 +2,14 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import UserCreateSerializer
-from rest_framework.permissions import IsAdminUser
+from rest_framework.permissions import IsAdminUser, AllowAny
 
 
 # Create your views here.
 
 class UserCreateView(APIView):
-    permission_classes = [IsAdminUser]
+    permission_classes = [AllowAny]
+
     def post(self,request):
         serializer = UserCreateSerializer(data=request.data)
         if serializer.is_valid():
