@@ -5,8 +5,12 @@ function BaseLayout({ children }) {
     return (
         <div>
             <Navbar />
-            <div className="container">
-                {children}
+            <div className="container mt-7"> {/* Agrega un margen top para dar espacio al contenido */}
+                <div className="row">
+                    <div className="col">
+                        {children}
+                    </div>
+                </div>
             </div>
         </div>
     );
